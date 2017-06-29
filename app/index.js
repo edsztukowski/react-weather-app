@@ -1,18 +1,15 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-require('./index.css');
-
-class App extends React.Component {
-   render() {
-     return (
-       <div>
-          React Weather App!
-       </div>
-     )
-   }
-}
+require('./index.css')
+var WeatherApp = require('./components/app')
+var Header = require('./components/header')
 
 ReactDOM.render(
-  <App />,
+  <WeatherApp />,
   document.getElementById('app')
-);
+)
+
+ReactDOM.render(
+  <Header />,
+  document.getElementById("site-header")
+)
