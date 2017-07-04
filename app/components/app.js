@@ -8,7 +8,8 @@ class WeatherApp extends React.Component {
        <div className="app-container" style={{backgroundImage: "url('app/images/pattern.svg')"}}>
           <div className="search-container">
               <h2>Enter a City and State</h2>
-              <Search />
+              <Search value="80303"
+              onChange={this.handleChange}/>
           </div>
        </div>
      )
