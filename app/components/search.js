@@ -7,6 +7,15 @@ class Search extends React.Component {
     this.state = {
       zipcode: 80303
     };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    var value = event.target.value;
+    this.setState(function() {
+      return {
+        zipcode:value
+      }
+    })
   }
   render() {
     return (
@@ -16,6 +25,7 @@ class Search extends React.Component {
             type="text"
             name="searchQuery"
             value={this.state.zipcode}
+            onChange={this.handleChange}
           />
           <input
             type="submit"
