@@ -15,8 +15,31 @@ body {
   flex-direction: column;
 }
 
-#weather-header {
+#site-header {
   background: #fff;
+}
+
+.weather-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-search form {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row-reverse;
+    margin-right: 2em;
+}
+
+.header-search form button {
+  margin-right: 2em;
 }
 
 .weather-header h1 {
