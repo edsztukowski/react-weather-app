@@ -7,7 +7,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      zipcode: 80303,
+      zipcode: '',
       weather: null
     };
     this.handleChange = this.handleChange.bind(this);
