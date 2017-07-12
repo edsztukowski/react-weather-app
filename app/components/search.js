@@ -1,15 +1,23 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var PropTypes = require('prop-types');
+var api = require('../utils/api');
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      zipcode: 80303
+      zipcode: 80303,
+      weather: null
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  componentDidMount () {
+    api.fetchWeather(this.state.zipcode)
+     .then(function(weather) {
+       console.log(weather)
+     })
   }
   handleChange(event) {
     var value = event.target.value;
