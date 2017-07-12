@@ -1,15 +1,22 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var PropTypes = require('prop-types');
+var api = require('../utils/api');
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      zipcode: 80303
+      zipcode: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit() {
+    api.fetchWeather(this.state.zipcode)
+     .then(function(response) {
+       console.log(response)
+     })
   }
   handleChange(event) {
     var value = event.target.value;
@@ -17,12 +24,7 @@ class Search extends React.Component {
       return {
         zipcode:value
       }
-    })
-  }
-  handleSubmit(event) {
-    preventDefault(event);
-
-
+    });
   }
   render() {
     return (
@@ -34,12 +36,12 @@ class Search extends React.Component {
             onChange={this.handleChange}
             value={this.state.zipcode}
           />
-        <button
-            type="submit"
+          <button
+            type="button"
             disabled={!this.state.zipcode}
-            onSubmit={this.handleSubmit}>
+            onClick={this.handleSubmit}>
             Submit
-        </button>
+          </button>
         </form>
       </div>
     )
