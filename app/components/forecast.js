@@ -1,6 +1,6 @@
 var React = require('react');
 
-class forecast extends React.Component {
+class Forecast extends React.Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class forecast extends React.Component {
   }
 }
 
-module.exports = forecast;
+module.exports = Forecast;
