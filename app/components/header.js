@@ -8,7 +8,7 @@ class Header extends React.Component {
         <div className="weather-header">
           <h1>React Weather App</h1>
           <div className="header-search">
-            <Search value="" />
+            <Search />
           </div>
         </div>
       )

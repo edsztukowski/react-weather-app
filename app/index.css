@@ -15,6 +15,14 @@ body {
   flex-direction: column;
 }
 
+.header-search h2 {
+  display: none;
+}
+
+.header-search .search-container {
+  min-height: 0;
+}
+
 #site-header {
   background: #fff;
 }

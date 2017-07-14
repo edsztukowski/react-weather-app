@@ -7,7 +7,7 @@ module.exports = {
 
     return axios.get(encodedURI)
       .then(function(response){
-        return response;
+        return response.data;
       })
   },
 
@@ -17,7 +17,7 @@ module.exports = {
 
     return axios.get(encodedURI)
       .then(function(response){
-        return response;
+        return response.data;
       })
   }
 }
