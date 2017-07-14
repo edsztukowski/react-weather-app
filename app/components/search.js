@@ -28,6 +28,8 @@ class Search extends React.Component {
   }
   render() {
     return (
+    <div className="search-container">
+      <h2>Enter a City and State</h2>
       <div className="search-bar">
         <form>
           <input
@@ -44,6 +46,7 @@ class Search extends React.Component {
           </button>
         </form>
       </div>
+    </div>
     )
   }
 }
