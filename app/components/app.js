@@ -12,7 +12,7 @@ class WeatherApp extends React.Component {
       <Router>
         <div className="app-container" style={{backgroundImage: "url('app/images/pattern.svg')"}}>
           <Route path ='/forecast' component={Forecast} />
-          <Route path = '/' component={Search} />
+          <Route exact path = '/' component={Search} />
         </div>
       </Router>
      )
