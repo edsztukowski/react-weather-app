@@ -83,3 +83,11 @@ input[type="submit"] {
   padding: 0.5em;
   border-radius: 5px;
 }
+
+/********
+Forecast
+********/
+.forecast-container {
+  height: 100%;
+  background: #fff;
+}

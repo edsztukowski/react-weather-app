@@ -41,7 +41,8 @@ class Search extends React.Component {
           <button
             type="button"
             disabled={!this.state.zipcode}
-            onClick={this.handleSubmit}>
+            onClick={this.handleSubmit}
+            to="/forecast">
             Submit
           </button>
         </form>
