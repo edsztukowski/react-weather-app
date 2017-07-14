@@ -13,10 +13,14 @@ class WeatherApp extends React.Component {
       <Router>
         <div className="app-container" style={{backgroundImage: "url('app/images/pattern.svg')"}}>
           <Switch>
-            <Route exact path ='/forecast' component={Forecast} />
+            <Route path ='/forecast' component={Forecast} />
             <Route exact path = '/' component={Search} />
             <Route render={function() {
-                return <p>Not Found</p>
+                return (
+                  <div className="404-page">
+                    <p>Not Found!</p>
+                  </div>
+                )
             }} />
           </Switch>
         </div>
