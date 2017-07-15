@@ -14,7 +14,8 @@ class Forecast extends React.Component {
     this.updateWeather = this.updateWeather.bind(this);
   }
   componentDidMount() {
-    this.zip = queryString.parse(this.props.location.search).zip
+    this.zip = queryString.parse(this.props.location.search);
+    this.zip = this.zip.zipcode;
     this.updateWeather(this.zip);
   }
   updateWeather(zip) {
