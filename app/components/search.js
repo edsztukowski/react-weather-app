@@ -13,18 +13,19 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  /*
+/*
   handleSubmit() {
     api.fetchWeather(this.state.zipcode)
      .then(function(response) {
        console.log(response)
      })
   }
-  */
+*/
 
   handleSubmit() {
-    window.location.assign('/forecast/zipcode=' + this.state.zipcode)
+    window.location.assign('/forecast/?zipcode=' + this.state.zipcode)
   }
+
 
   handleChange(event) {
     var value = event.target.value;
@@ -49,8 +50,7 @@ class Search extends React.Component {
           <button
             type="button"
             disabled={!this.state.zipcode}
-            onClick={this.handleSubmit}
-            to="/forecast">
+            onClick={this.handleSubmit}>
             Submit
           </button>
         </form>
