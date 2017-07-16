@@ -8,7 +8,7 @@ class Forecast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      weatherData: [],
+      weatherData: null,
       loading: true
     }
     this.updateWeather = this.updateWeather.bind(this);
@@ -38,11 +38,15 @@ class Forecast extends React.Component {
   }
 
   render() {
-    return (
-      <div className="forecast-container">
-        <h2>We Are the forecast!</h2>
-      </div>
-    )
+    if (this.state.loading) {
+      return <Loading />
+    } else {
+        return (
+          <div className="forecast-container">
+            <h2>We Are the forecast!</h2>
+          </div>
+        )
+      }
   }
 }
 
