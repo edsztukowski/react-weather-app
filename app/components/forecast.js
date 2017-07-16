@@ -4,15 +4,18 @@ var queryString = require('query-string');
 var api = require('../utils/api');
 var Loading = require('./loading')
 
+
+
 class Forecast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      weatherData: null,
+      weatherData: [],
       loading: true
     }
     this.updateWeather = this.updateWeather.bind(this);
   }
+
   componentDidMount() {
     this.zip = queryString.parse(this.props.location.search);
     this.zip = this.zip.zipcode;
@@ -25,7 +28,7 @@ class Forecast extends React.Component {
       }
     })
 
-    api.fetchWeather(zip)
+    api.fetchFiveDays(zip)
       .then(function (response) {
         this.setState(function () {
           return {
@@ -33,17 +36,28 @@ class Forecast extends React.Component {
             weatherData: response,
           }
         })
-        console.log(this.state.weatherData)
       }.bind(this))
   }
 
   render() {
+    var weatherArr = this.state.weatherData.list;
+    //console.log(weatherArr)
     if (this.state.loading) {
       return <Loading />
     } else {
         return (
           <div className="forecast-container">
-            <h2>We Are the forecast!</h2>
+            <ul className="five-day-list">
+              {weatherArr.map(function(day) {
+                console.log(day)
+                  return (
+                    <li key={day.dt}>
+                      {day.weather[0].description}
+                    </li>
+                  )
+                })
+              }
+            </ul>
           </div>
         )
       }
