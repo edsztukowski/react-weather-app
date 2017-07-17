@@ -2,9 +2,23 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var queryString = require('query-string');
 var api = require('../utils/api');
-var Loading = require('./loading')
+var Loading = require('./loading');
+var getUtils = require('../utils/data-cleanup');
+var convertTemp = getUtils.convertTemp;
+var getDay = getUtils.getDay;
 
-
+function ShowDay(props) {
+  var date = getDay(props.weekday.dt);
+  var weatherIcon = props.weekday.weather[0].icon;
+  return (
+    <div className="day-container">
+      <div className="icon">
+        <img src={'../app/images/weather-icons/' + weatherIcon + '.svg'} />
+      </div>
+      <div className="subhead">{date}</div>
+    </div>
+  )
+}
 
 class Forecast extends React.Component {
   constructor(props) {
@@ -41,7 +55,7 @@ class Forecast extends React.Component {
 
   render() {
     var weatherArr = this.state.weatherData.list;
-    //console.log(weatherArr)
+    console.log(weatherArr);
     if (this.state.loading) {
       return <Loading />
     } else {
@@ -49,11 +63,8 @@ class Forecast extends React.Component {
           <div className="forecast-container">
             <ul className="five-day-list">
               {weatherArr.map(function(day) {
-                console.log(day)
                   return (
-                    <li key={day.dt}>
-                      {day.weather[0].description}
-                    </li>
+                      <ShowDay key={day.dt} weekday={day} />
                   )
                 })
               }
