@@ -31,7 +31,7 @@ function convertTemp (kelvin) {
 
 
 function getDay(timestamp) {
-  var d = new Date();
+  var d = new Date(timestamp * 1000);
   var day = daysOfWeek[d.getDay()]
   var month = months[d.getMonth()] + ' ' + d.getDate();
   return day + ', ' + month;

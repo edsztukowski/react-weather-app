@@ -13,7 +13,7 @@ function ShowDay(props) {
   return (
     <div className="day-container">
       <div className="icon">
-        <img src={'./app/images/weather-icons/' + weatherIcon + '.svg'} />
+        <img src={'../app/images/weather-icons/' + weatherIcon + '.svg'} />
       </div>
       <div className="subhead">{date}</div>
     </div>
@@ -54,15 +54,15 @@ class Forecast extends React.Component {
   }
 
   render() {
-  //  var weatherArr = this.state.weatherData.list;
-  //  console.log(weatherArr);
+    var weatherArr = this.state.weatherData.list;
+    console.log(weatherArr);
     if (this.state.loading) {
       return <Loading />
     } else {
         return (
           <div className="forecast-container">
             <ul className="five-day-list">
-              {this.state.weatherData.list.map(function(day) {
+              {weatherArr.map(function(day) {
                   return (
                       <ShowDay key={day.dt} weekday={day} />
                   )
