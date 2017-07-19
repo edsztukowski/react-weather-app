@@ -1,7 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Search = require('./search')
-var Forecast = require('./forecast')
+var Search = require('./search');
+var Forecast = require('./forecast');
+var Detail = require('./detail')
 var ReactRouter = require('react-router-dom');
 var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
@@ -14,6 +15,7 @@ class WeatherApp extends React.Component {
         <div className="app-container" style={{backgroundImage: "url('app/images/pattern.svg')"}}>
           <Switch>
             <Route path ='/forecast' component={Forecast} />
+            <Route path = '/details' component={Detail} />
             <Route exact path = '/' component={Search} />
             <Route render={function() {
                 return (
