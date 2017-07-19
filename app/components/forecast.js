@@ -55,12 +55,15 @@ class Forecast extends React.Component {
   }
 
   handleSubmit(props) {
-    console.log(props)
+    console.log("The city is " + this.state.weatherData.city.name);
+    console.log("The country is " +this.state.weatherData.city.country);
+    console.log("The temperature is " + convertTemp(props.temp.day));
+    console.log("Expect " + props.weather[0].description);
+    console.log("The day is " + getDay(props.dt));
   }
 
   render() {
     var weatherArr = this.state.weatherData.list;
-
     if (this.state.loading) {
       return <Loading />
     } else {
