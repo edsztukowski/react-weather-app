@@ -37,8 +37,6 @@ function getDay(timestamp) {
   return day + ', ' + month;
 }
 
-
-
 module.exports = {
   getDay: getDay,
   convertTemp: convertTemp

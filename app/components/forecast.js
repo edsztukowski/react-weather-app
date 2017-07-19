@@ -11,7 +11,7 @@ function ShowDay(props) {
   var date = getDay(props.weekday.dt);
   var weatherIcon = props.weekday.weather[0].icon;
   return (
-    <div className="day-container">
+    <div onClick={props.onClick} className="day-container">
       <div className="icon">
         <img src={'../app/images/weather-icons/' + weatherIcon + '.svg'} />
       </div>
@@ -28,6 +28,7 @@ class Forecast extends React.Component {
       loading: true
     }
     this.updateWeather = this.updateWeather.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -53,22 +54,28 @@ class Forecast extends React.Component {
       }.bind(this))
   }
 
+  handleSubmit(props) {
+    console.log(props)
+  }
+
   render() {
     var weatherArr = this.state.weatherData.list;
-    console.log(weatherArr);
+
     if (this.state.loading) {
       return <Loading />
     } else {
         return (
           <div className="forecast-container">
-            <ul className="five-day-list">
+
               {weatherArr.map(function(day) {
                   return (
-                      <ShowDay key={day.dt} weekday={day} />
+                    <div key={day.dt}>
+                      <ShowDay onClick={this.handleSubmit.bind(this, day)}  weekday={day} />
+                    </div>
                   )
-                })
+                }, this)
               }
-            </ul>
+
           </div>
         )
       }
