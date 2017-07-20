@@ -73,7 +73,8 @@ class Forecast extends React.Component {
               {weatherArr.map(function(day) {
                   return (
                     <div key={day.dt}>
-                      <ShowDay onClick={this.handleSubmit.bind(this, day)}  weekday={day} />
+                      <ShowDay onClick={this.handleSubmit.bind(this, day)}
+                      weekday={day} />
                     </div>
                   )
                 }, this)
@@ -85,4 +86,4 @@ class Forecast extends React.Component {
   }
 }
 
-module.exports = Forecast;
+module.exports =  Forecast;
