@@ -1,17 +1,13 @@
 var React = require('react')
+var ShowDay = require('./showday');
+
 
 class Detail extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      text: "DETAILS"
-    };
-  }
-
   render() {
+    console.log(this.props)
     return(
       <h2>
-        {this.state.text}
+        "test"
       </h2>
     )
   }
