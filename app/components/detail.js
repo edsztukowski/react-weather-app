@@ -1,17 +1,19 @@
 var React = require('react')
+var ShowDay = require('./showday');
+
 
 class Detail extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      text: "DETAILS"
+      weatherData: null
     };
   }
 
   render() {
     return(
       <h2>
-        {this.state.text}
+        <ShowDay />
       </h2>
     )
   }

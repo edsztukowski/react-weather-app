@@ -4,21 +4,11 @@ var queryString = require('query-string');
 var api = require('../utils/api');
 var Loading = require('./loading');
 var getUtils = require('../utils/data-cleanup');
+var ShowDay = require('./showday')
 var convertTemp = getUtils.convertTemp;
 var getDay = getUtils.getDay;
 
-function ShowDay(props) {
-  var date = getDay(props.weekday.dt);
-  var weatherIcon = props.weekday.weather[0].icon;
-  return (
-    <div onClick={props.onClick} className="day-container">
-      <div className="icon">
-        <img src={'../app/images/weather-icons/' + weatherIcon + '.svg'} />
-      </div>
-      <div className="subhead">{date}</div>
-    </div>
-  )
-}
+
 
 class Forecast extends React.Component {
   constructor(props) {
@@ -54,12 +44,17 @@ class Forecast extends React.Component {
       }.bind(this))
   }
 
+/*
   handleSubmit(props) {
     console.log("The city is " + this.state.weatherData.city.name);
     console.log("The country is " +this.state.weatherData.city.country);
     console.log("The temperature is " + convertTemp(props.temp.day));
     console.log("Expect " + props.weather[0].description);
     console.log("The day is " + getDay(props.dt));
+  }
+  */
+  handleSubmit(props) {
+    window.history.pushState(null, '', '/details/' + this.state.weatherData.city.name);
   }
 
   render() {
