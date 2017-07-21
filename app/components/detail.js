@@ -6,9 +6,11 @@ class Detail extends React.Component {
   render() {
     console.log(this.props)
     return(
-      <h2>
-        "test"
-      </h2>
+      <div className="detail-view">
+        <h2>
+          <ShowDay weekday={this.props.location.state} />
+        </h2>
+      </div>
     )
   }
 
