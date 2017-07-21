@@ -6,14 +6,14 @@ class Detail extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      weatherData: null
+      weatherData: 'blank still'
     };
   }
 
   render() {
     return(
       <h2>
-        <ShowDay />
+        {this.state.weatherData}
       </h2>
     )
   }

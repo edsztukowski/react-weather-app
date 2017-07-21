@@ -54,7 +54,13 @@ class Forecast extends React.Component {
   }
   */
   handleSubmit(props) {
-    window.history.pushState(null, '', '/details/' + this.state.weatherData.city.name);
+    var dataObj = {
+      city: this.state.weatherData.city.name,
+      country: this.state.weatherData.city.country,
+      temp: convertTemp(props.temp.day),
+      currentDay: getDay(props.dt)
+    }
+    window.history.pushState(dataObj, '', '/details/' + this.state.weatherData.city.name);
   }
 
   render() {
