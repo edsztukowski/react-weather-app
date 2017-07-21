@@ -66,7 +66,7 @@ class Forecast extends React.Component {
 
   handleSubmit(zip) {
     this.props.history.push({
-      pathname: '/details/' + this.zip,
+      pathname: '/details/' + this.state.weatherData.city.name,
       state: zip,
     })
   }
