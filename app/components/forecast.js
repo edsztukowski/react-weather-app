@@ -52,7 +52,7 @@ class Forecast extends React.Component {
     console.log("Expect " + props.weather[0].description);
     console.log("The day is " + getDay(props.dt));
   }
-  */
+
   handleSubmit(props) {
     var dataObj = {
       city: this.state.weatherData.city.name,
@@ -62,6 +62,15 @@ class Forecast extends React.Component {
     }
     window.history.pushState(dataObj, '', '/details/' + this.state.weatherData.city.name);
   }
+  */
+
+  handleSubmit(zip) {
+    this.props.history.push({
+      pathname: '/details/' + this.zip,
+      state: zip,
+    })
+  }
+
 
   render() {
     var weatherArr = this.state.weatherData.list;

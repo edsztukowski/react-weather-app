@@ -3,17 +3,11 @@ var ShowDay = require('./showday');
 
 
 class Detail extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      weatherData: 'blank still'
-    };
-  }
-
   render() {
+    console.log(this.props)
     return(
       <h2>
-        {this.state.weatherData}
+        "test"
       </h2>
     )
   }
