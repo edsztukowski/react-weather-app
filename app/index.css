@@ -178,3 +178,15 @@ h2 {
 .detail-view h2 {
   margin-bottom: 2em;
 }
+
+.weather-desc {
+  text-transform: capitalize;
+}
+
+.high {
+  color: #FF7819;
+}
+
+.low {
+  color: #00A5B2;
+}
