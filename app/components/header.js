@@ -7,7 +7,7 @@ function Header(props) {
     <div className="weather-header">
       <h1><a href="/">React Weather App</a></h1>
       <div className="header-search">
-        <Search />
+        {props.children}
       </div>
     </div>
   )
