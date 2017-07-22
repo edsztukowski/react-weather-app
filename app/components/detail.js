@@ -1,5 +1,7 @@
 var React = require('react')
 var ShowDay = require('./showday');
+var getUtils = require('../utils/data-cleanup');
+var convertTemp = getUtils.convertTemp;
 
 
 class Detail extends React.Component {
@@ -8,7 +10,9 @@ class Detail extends React.Component {
     return(
       <div className="detail-view">
         <h2>
-          <ShowDay weekday={this.props.location.state} />
+          <ShowDay weekday={this.props.location.state}>
+          Temp: {convertTemp(this.props.location.state.temp.day)}
+          </ShowDay>
         </h2>
       </div>
     )
