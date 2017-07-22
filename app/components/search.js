@@ -14,7 +14,10 @@ class Search extends React.Component {
   }
 
   handleSubmit() {
-    window.location.assign('/forecast/?zipcode=' + this.state.zipcode)
+    this.props.history.push({
+                      pathname: '/forecast',
+                      search: '?zipcode=' + this.state.zipcode
+                    });
   }
 
   handleChange(event) {

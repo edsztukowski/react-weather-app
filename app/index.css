@@ -29,6 +29,9 @@ h1, h2 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  height: 60%;
+  align-items: center;
+  padding: 0 3em;
 }
 
 /****HEADER****/
@@ -38,7 +41,7 @@ h1, h2 {
 }
 
 .weather-header {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid #ddd;
@@ -125,7 +128,7 @@ h2 {
 }
 .icon img {
   height: 150px;
-  max-width: 200px;
+  max-width: 150px;
 }
 
 .forecast-results .icon:hover {
@@ -172,7 +175,9 @@ h2 {
 .detail-view {
   text-align: center;
   height: 100%;
-  margin-top: 2em;
+  width: 50%;
+  margin: 2em auto;
+  background: #f6f6f6
 }
 
 .detail-view h2 {
