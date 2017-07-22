@@ -6,7 +6,7 @@ class Header extends React.Component {
     render() {
       return(
         <div className="weather-header">
-          <h1>React Weather App</h1>
+          <h1><a href="/">React Weather App</a></h1>
           <div className="header-search">
             <Search />
           </div>
