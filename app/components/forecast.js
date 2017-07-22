@@ -8,8 +8,6 @@ var ShowDay = require('./showday')
 var convertTemp = getUtils.convertTemp;
 var getDay = getUtils.getDay;
 
-
-
 class Forecast extends React.Component {
   constructor(props) {
     super(props);
@@ -64,8 +62,9 @@ class Forecast extends React.Component {
               {weatherArr.map(function(day) {
                   return (
                     <div key={day.dt}>
-                      <ShowDay onClick={this.handleSubmit.bind(this, day)}
-                      weekday={day} />
+                      <ShowDay
+                        onClick={this.handleSubmit.bind(this, day)}
+                        weekday={day} />
                     </div>
                   )
                 }, this)
