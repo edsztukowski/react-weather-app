@@ -1,7 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Khula|Raleway');
+
+
+/*****GLOBAL STYLING****/
 body {
   margin: 0;
+  font-family: 'Khula', sans-serif;
 }
+
+h1, h2 {
+  font-family: 'Raleway', sans-serif;
+}
+
 #app {
   height: 100vh;
   max-width: 100%;
@@ -15,28 +24,44 @@ body {
   flex-direction: column;
 }
 
-.header-search h2 {
-  display: none;
+.row {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.header-search .search-container {
-  min-height: 0;
-}
+/****HEADER****/
 
 #site-header {
-  background: #fff;
+  background: #f6f6f6;
 }
 
 .weather-header {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid #ddd;
+  padding-left: 2em;
+}
+
+.weather-header h1 {
+  font-family: 'Raleway', sans-serif;
 }
 
 .header-search {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 2em;
+}
+
+.header-search h2 {
+  display: none;
+}
+
+.header-search .search-container {
+  min-height: 0;
 }
 
 .header-search form {
@@ -50,17 +75,13 @@ body {
   margin-right: 2em;
 }
 
-.weather-header h1 {
-  font-family: 'Raleway', sans-serif;
-}
-
+/***Search Styles***/
 .search-container {
   text-align: center;
   min-height: 24em;
 }
 
 .search-container h2 {
-    font-family: 'Raleway', sans-serif;
     color: #fff;
     font-size: 2em
 }
@@ -75,7 +96,7 @@ input[type="text"] {
   border: 0;
 }
 
-input[type="submit"] {
+.btn {
   background: #51B964;
   color: #fff;
   border: 0;
@@ -87,7 +108,16 @@ input[type="submit"] {
 /*******
 Forecast
 ********/
-.forecast-container {
+
+.forecast-results {
   height: 100%;
-  background: #fff;
+  padding: 0 2em;
+}
+.forecast-results h2 {
+  text-align: center;
+}
+.icon img {
+  height: 150px;
+  max-width: 200px;
+  margin-bottom: 2em
 }

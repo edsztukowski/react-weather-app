@@ -44,26 +44,6 @@ class Forecast extends React.Component {
       }.bind(this))
   }
 
-/*
-  handleSubmit(props) {
-    console.log("The city is " + this.state.weatherData.city.name);
-    console.log("The country is " +this.state.weatherData.city.country);
-    console.log("The temperature is " + convertTemp(props.temp.day));
-    console.log("Expect " + props.weather[0].description);
-    console.log("The day is " + getDay(props.dt));
-  }
-
-  handleSubmit(props) {
-    var dataObj = {
-      city: this.state.weatherData.city.name,
-      country: this.state.weatherData.city.country,
-      temp: convertTemp(props.temp.day),
-      currentDay: getDay(props.dt)
-    }
-    window.history.pushState(dataObj, '', '/details/' + this.state.weatherData.city.name);
-  }
-  */
-
   handleSubmit(zip) {
     this.props.history.push({
       pathname: '/details/' + this.state.weatherData.city.name,
@@ -71,15 +51,16 @@ class Forecast extends React.Component {
     })
   }
 
-
   render() {
     var weatherArr = this.state.weatherData.list;
     if (this.state.loading) {
       return <Loading />
     } else {
         return (
-          <div className="forecast-container">
+          <div className="forecast-results">
+            <h2>Your forecast for {this.state.weatherData.city.name}</h2>
 
+          <div className="row">
               {weatherArr.map(function(day) {
                   return (
                     <div key={day.dt}>
@@ -89,7 +70,7 @@ class Forecast extends React.Component {
                   )
                 }, this)
               }
-
+          </div>
           </div>
         )
       }
