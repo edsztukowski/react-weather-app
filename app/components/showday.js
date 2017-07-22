@@ -12,7 +12,9 @@ function ShowDay(props) {
         <img src={'../app/images/weather-icons/' + weatherIcon + '.svg'} />
       </div>
       <div className="subhead">{date}</div>
+      {props.children}
     </div>
+
   )
 }
 
