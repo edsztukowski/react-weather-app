@@ -13,7 +13,8 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault();
     this.props.history.push({
                       pathname: '/forecast',
                       search: '?zipcode=' + this.state.zipcode
@@ -33,7 +34,7 @@ class Search extends React.Component {
     <div className="search-container">
       <h2>Enter a City and State</h2>
       <div className="search-bar">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             name="zipcode"
@@ -42,9 +43,9 @@ class Search extends React.Component {
           />
           <button
             className='btn'
-            type="button"
+            type="submit"
             disabled={!this.state.zipcode}
-            onClick={this.handleSubmit}>
+            >
             Submit
           </button>
         </form>
