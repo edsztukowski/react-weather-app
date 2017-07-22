@@ -7,9 +7,4 @@ var Header = require('./components/header')
 ReactDOM.render(
   <WeatherApp />,
   document.getElementById('app')
-)
-
-ReactDOM.render(
-  <Header />,
-  document.getElementById("site-header")
-)
+);

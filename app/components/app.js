@@ -7,24 +7,28 @@ var ReactRouter = require('react-router-dom');
 var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
 var Switch = ReactRouter.Switch;
+var Header = require('./header')
 
 class WeatherApp extends React.Component {
    render() {
      return (
       <Router>
-        <div className="app-container" style={{backgroundImage: "url('../app/images/pattern.svg')"}}>
-          <Switch>
-            <Route path ='/forecast' component={Forecast} />
-            <Route path = '/details/' component={Detail} />
-            <Route exact path = '/' component={Search} />
-            <Route render={function() {
-                return (
-                  <div className="404-page">
-                    <p>Not Found!</p>
-                  </div>
-                )
-            }} />
-          </Switch>
+        <div style={{"height" : "100%"}}>
+          <Header />
+          <div className="app-container" style={{backgroundImage: "url('../app/images/pattern.svg')"}}>
+            <Switch>
+              <Route path ='/forecast' component={Forecast} />
+              <Route path = '/details/' component={Detail} />
+              <Route exact path = '/' component={Search} />
+              <Route render={function() {
+                  return (
+                    <div className="404-page">
+                      <p>Not Found!</p>
+                    </div>
+                  )
+              }} />
+            </Switch>
+          </div>
         </div>
       </Router>
      )
