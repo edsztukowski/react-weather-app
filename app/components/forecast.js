@@ -7,6 +7,7 @@ var getUtils = require('../utils/data-cleanup');
 var ShowDay = require('./showday')
 var convertTemp = getUtils.convertTemp;
 var getDay = getUtils.getDay;
+var Header = require('./header')
 
 class Forecast extends React.Component {
   constructor(props) {
@@ -57,8 +58,7 @@ class Forecast extends React.Component {
         return (
           <div className="forecast-results">
             <h2>Your forecast for {this.state.weatherData.city.name}</h2>
-
-          <div className="row">
+            <div className="row">
               {weatherArr.map(function(day) {
                   return (
                     <div key={day.dt}>
