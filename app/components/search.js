@@ -15,11 +15,10 @@ class Search extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.history.push({
-                      pathname: '/forecast',
-                      search: '?zipcode=' + this.state.zipcode
-                    });
+    console.log(this.state.zipcode)
+    window.location.assign('/forecast/?zipcode=' + this.state.zipcode)
   }
+
 
   handleChange(event) {
     var value = event.target.value;
