@@ -27,11 +27,15 @@ h1, h2 {
 .row {
   background: #fff;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-around;
   height: 60%;
   align-items: center;
-  padding: 0 3em;
+  padding: 3em 3em 0;
+}
+
+.row div {
+  padding: 0 1em;
 }
 
 /****HEADER****/
@@ -113,6 +117,12 @@ input[type="text"] {
   border-radius: 5px;
 }
 
+/****Loading***/
+
+.loading {
+  color: #fff;
+}
+
 /*******
 Forecast
 ********/
@@ -127,7 +137,7 @@ h2 {
   margin-bottom: 2em;
 }
 .icon img {
-  height: 150px;
+  height: 120px;
   max-width: 150px;
 }
 
@@ -194,4 +204,34 @@ h2 {
 
 .low {
   color: #00A5B2;
+}
+
+
+/****Media Queries****/
+
+@media screen and (max-width: 829px) {
+  .app-container {
+    height: auto;
+  }
+  .row div {
+    margin-bottom: 3em;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .weather-header {
+    display: block;
+    text-align: center;
+  }
+
+  .header-search .search-container {
+      margin: 0 auto;
+  }
+  .header-search form {
+    flex-direction: row;
+  }
+  .header-search form button {
+    margin-right: 0;
+    margin-left: 2em;
+  }
 }
