@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 var config = {
   entry: './app/index.js',
@@ -11,7 +12,8 @@ var config = {
   module: {
     rules: [
       { test: /\.(js)$/, use: 'babel-loader'},
-      { test: /\.css$/, use: ['style-loader', 'css-loader']}
+      { test: /\.css$/, use: ['style-loader', 'css-loader']},
+      { test: /\.svg$/, use: 'file-loader' }
     ]
   },
   devServer: {
@@ -32,3 +34,5 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.optimize.UglifyJsPlugin()
   )
 }
+
+module.exports = config;
