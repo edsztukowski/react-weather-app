@@ -1,4 +1,10 @@
-<img src="https://cloud.githubusercontent.com/assets/2933430/24846370/3443ccfc-1d77-11e7-8d1d-dc64d86c3852.png" width="300" align="right">
+My first (mostly) solo react app build. Based on React fundamentals course from Tyler McGinnis, I took image files from his branch and then built out a React-based weather app that hooks into the openweather API. 
+
+The app is hosted on firebase and can be viewed here:
+
+https://react-weather-app-b8a12.firebaseapp.com
+
+========
 
 Curriculum for React Fundamentals Course
 ========
