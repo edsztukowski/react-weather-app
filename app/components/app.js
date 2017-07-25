@@ -31,6 +31,7 @@ class WeatherApp extends React.Component {
               }} />
             </Switch>
           </div>
+          <p className="footer">Ed Sztukowski | 2017</p>
         </div>
       </Router>
      )
