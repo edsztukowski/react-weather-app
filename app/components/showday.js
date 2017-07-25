@@ -9,7 +9,7 @@ function ShowDay(props) {
   return (
     <div onClick={props.onClick} className="day-container">
       <div className="icon">
-        <img src={'../app/images/weather-icons/' + weatherIcon + '.svg'} />
+        <img src={"/" + weatherIcon + '.svg'} />
       </div>
       <div className="subhead"><p>{date}</p></div>
       {props.children}
