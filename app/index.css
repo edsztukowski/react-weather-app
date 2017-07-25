@@ -7,6 +7,7 @@
   background: #f6f6f6;
   font-size: 14px;
   padding: 1em 0;
+  margin: 0;
   text-align: center;
 }
 body {
@@ -19,12 +20,13 @@ h1, h2 {
 }
 
 #app {
-  height: 100vh;
+  height: 100%;
   max-width: 100%;
   position: relative;
 }
 
 .app-container {
+  padding: 6em;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -103,7 +105,7 @@ h1, h2 {
 
 .search-container h2 {
     color: #fff;
-    font-size: 2em
+    font-size: 2rem
 }
 
 input[type="text"] {
@@ -140,7 +142,7 @@ Forecast
   padding: 0 2em;
 }
 h2 {
-  font-size: 1.8em;
+  font-size: 1.8rem;
   text-align: center;
   margin-bottom: 2em;
 }
@@ -226,7 +228,14 @@ h2 {
   }
 }
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 500px) {
+  .app-container {
+    padding: 3em;
+  }
+
+  .forecast-results {
+    padding: 0;
+  }
   .weather-header {
     display: block;
     text-align: center;
